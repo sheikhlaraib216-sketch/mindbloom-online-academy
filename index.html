@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MindBloom Online Academy offers flexible online classes for students in Grades 1–10 in Pakistan and worldwide.">
+  <title>MindBloom Online Academy | Learn Better. Grow Smarter.</title>
+  <style>
+    :root {
+      --navy: #071f45;
+      --navy-2: #103568;
+      --blue: #2f6fbd;
+      --sky: #eaf3ff;
+      --ink: #17243a;
+      --muted: #64748b;
+      --white: #fff;
+      --line: #e5edf7;
+      --gold: #f2bd59;
+      --shadow: 0 18px 45px rgba(7,31,69,.10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #dce9fb; font-size: .88rem; padding: 8px 0; }
+    .topbar .container { display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+    header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:11px; color:var(--navy); font-weight:800; letter-spacing:-.4px; line-height:1.1; }
+    .brand-mark { width:43px; height:43px; border-radius:14px; display:grid; place-items:center; color:#fff; background:linear-gradient(145deg,#2f78c8,#0b2853); font-size:1.15rem; box-shadow:0 8px 18px #174b8733; }
+    .brand small { display:block; color:var(--muted); font-size:.68rem; font-weight:650; letter-spacing:1.4px; margin-top:5px; }
+    .nav-links { display:flex; align-items:center; gap:25px; font-size:.92rem; font-weight:650; color:#34445c; }
+    .nav-links a:hover { color:var(--blue); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; border-radius:999px; padding:13px 21px; background:var(--blue); color:#fff; font-weight:750; cursor:pointer; transition:.2s ease; box-shadow:0 8px 18px #2f6fbd2b; }
+    .btn:hover { transform:translateY(-2px); background:#245c9f; }
+    .btn-light { background:#fff; color:var(--navy); box-shadow:none; border:1px solid #d8e5f5; }
+    .btn-light:hover { background:#f3f8ff; color:var(--navy); }
+    .menu-toggle { display:none; background:none; border:0; font-size:1.7rem; color:var(--navy); cursor:pointer; }
+    .hero { overflow:hidden; position:relative; padding:84px 0 78px; background:radial-gradient(circle at 88% 18%,#dcecff 0,transparent 28%),linear-gradient(120deg,#f5f9ff,#fff 62%); }
+    .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:55px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:7px 13px; background:#e7f1ff; border:1px solid #d5e7ff; color:#245c9f; border-radius:999px; font-size:.82rem; font-weight:750; }
+    h1 { color:var(--navy); font-size:clamp(2.55rem,5vw,4.45rem); line-height:1.08; letter-spacing:-2.5px; margin:20px 0 18px; }
+    h1 span { color:var(--blue); }
+    .hero p { max-width:570px; color:#586981; font-size:1.08rem; margin:0 0 27px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .hero-note { margin-top:23px; color:#6b7c93; font-size:.88rem; }
+    .hero-visual { position:relative; min-height:420px; display:grid; place-items:center; }
+    .visual-card { width:min(100%,470px); border-radius:30px; overflow:hidden; box-shadow:var(--shadow); background:#dcecff; position:relative; }
+    .visual-card img { width:100%; height:390px; object-fit:cover; }
+    .floating { position:absolute; background:#fff; border:1px solid #e4edf8; border-radius:17px; padding:13px 17px; box-shadow:var(--shadow); font-weight:750; color:var(--navy); }
+    .floating small { display:block; color:var(--muted); font-weight:550; font-size:.75rem; }
+    .float-one { left:-15px; bottom:42px; }
+    .float-two { right:-12px; top:36px; }
+    .stats { background:var(--navy); color:#fff; padding:25px 0; }
+    .stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center; }
+    .stat strong { display:block; font-size:1.45rem; }
+    .stat span { color:#c3d5ed; font-size:.88rem; }
+    section { padding:82px 0; }
+    .section-head { max-width:680px; margin:0 auto 42px; text-align:center; }
+    .section-head .eyebrow { margin-bottom:12px; }
+    h2 { color:var(--navy); font-size:clamp(2rem,3.5vw,2.8rem); line-height:1.15; letter-spacing:-1.2px; margin:0 0 13px; }
+    .section-head p { color:var(--muted); margin:0; }
+    .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:55px; align-items:center; }
+    .about-image { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+    .about-image img { width:100%; height:390px; object-fit:cover; }
+    .about-copy p { color:var(--muted); }
+    .check-list { list-style:none; padding:0; margin:22px 0 0; display:grid; gap:12px; }
+    .check-list li { display:flex; gap:11px; align-items:flex-start; font-weight:650; color:#34445c; }
+    .check { flex:0 0 23px; height:23px; border-radius:50%; display:grid; place-items:center; background:#e7f4ed; color:#16834b; font-size:.8rem; }
+    .courses { background:#f6f9fe; }
+    .course-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .course-card { background:#fff; border:1px solid var(--line); border-radius:19px; padding:24px; transition:.2s; }
+    .course-card:hover { transform:translateY(-5px); box-shadow:var(--shadow); }
+    .course-icon { width:48px; height:48px; display:grid; place-items:center; border-radius:15px; background:#eaf3ff; font-size:1.4rem; margin-bottom:17px; }
+    .course-card h3 { margin:0 0 7px; color:var(--navy); font-size:1.13rem; }
+    .course-card p { margin:0; color:var(--muted); font-size:.92rem; }
+    .grades { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:28px; }
+    .grade-pill { padding:9px 15px; border-radius:999px; background:#fff; border:1px solid #dce8f6; color:#315274; font-weight:700; font-size:.88rem; }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .why-card { padding:27px; border:1px solid var(--line); border-radius:20px; background:#fff; }
+    .why-card .course-icon { background:#fff3dc; }
+    .why-card h3 { color:var(--navy); margin:0 0 8px; }
+    .why-card p { color:var(--muted); margin:0; font-size:.94rem; }
+    .trial { background:linear-gradient(120deg,#08234c,#17477f); color:#fff; }
+    .trial-wrap { display:flex; align-items:center; justify-content:space-between; gap:35px; }
+    .trial h2 { color:#fff; max-width:610px; }
+    .trial p { color:#d0def0; max-width:620px; margin:0; }
+    .trial .eyebrow { background:#ffffff18; color:#e8f2ff; border-color:#ffffff2b; }
+    .trial .btn { background:#fff; color:var(--navy); box-shadow:none; white-space:nowrap; }
+    .contact { background:#f6f9fe; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:35px; align-items:start; }
+    .contact-info p { color:var(--muted); }
+    .contact-item { display:flex; align-items:center; gap:14px; margin:18px 0; }
+    .contact-item .course-icon { margin:0; flex:0 0 48px; }
+    .contact-item strong { display:block; color:var(--navy); }
+    .contact-item span, .contact-item a { color:var(--muted); font-size:.92rem; overflow-wrap:anywhere; }
+    .contact-panel { background:#fff; padding:28px; border-radius:22px; border:1px solid var(--line); box-shadow:0 10px 30px #0b2b5010; }
+    .contact-panel h3 { margin:0 0 8px; color:var(--navy); }
+    .contact-panel p { color:var(--muted); margin:0 0 18px; }
+    .contact-panel .btn { width:100%; }
+    footer { background:#061a39; color:#d7e4f5; padding:28px 0; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; align-items:center; flex-wrap:wrap; }
+    footer small { color:#a9bdd7; }
+    .footer-links { display:flex; gap:18px; font-size:.88rem; }
+    .footer-links a:hover { color:#fff; }
+    @media (max-width:850px) {
+      .nav-links { display:none; position:absolute; top:76px; left:0; right:0; padding:20px; background:#fff; border-bottom:1px solid var(--line); flex-direction:column; align-items:stretch; gap:16px; }
+      .nav-links.open { display:flex; }
+      .menu-toggle { display:block; }
+      .nav > .btn { display:none; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns:1fr; }
+      .hero { padding-top:58px; }
+      .hero-visual { min-height:350px; }
+      .visual-card img { height:330px; }
+      .course-grid, .why-grid { grid-template-columns:repeat(2,1fr); }
+      .trial-wrap { align-items:flex-start; flex-direction:column; }
+    }
+    @media (max-width:560px) {
+      .container { width:min(100% - 30px,1120px); }
+      .topbar .container { justify-content:center; text-align:center; }
+      section { padding:62px 0; }
+      .hero { padding:48px 0 55px; }
+      h1 { letter-spacing:-1.5px; }
+      .hero-visual { min-height:290px; }
+      .visual-card img { height:270px; }
+      .float-one { left:-5px; bottom:12px; }
+      .float-two { right:-4px; top:10px; }
+      .stats-grid { grid-template-columns:1fr; gap:13px; }
+      .course-grid, .why-grid { grid-template-columns:1fr; }
+      .footer-row { justify-content:center; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Online learning for Grades 1–10</span>
+      <span>Serving students in Pakistan and worldwide</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="MindBloom Online Academy home">
+        <span class="brand-mark">M</span>
+        <span>MindBloom<small>ONLINE ACADEMY</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="#trial">Free Trial Class</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✦ Learning that helps you bloom</span>
+          <h1>Learn Better.<br><span>Grow Smarter.</span><br>Succeed Anywhere.</h1>
+          <p>Build confidence and strong foundations with supportive online learning. MindBloom Online Academy offers quality classes for students from Grade 1 to Grade 10 in Pakistan and around the world.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#courses">Explore Our Classes <span aria-hidden="true">→</span></a>
+            <a class="btn btn-light" href="#contact">Contact Us</a>
+          </div>
+          <div class="hero-note">✓ Online classes &nbsp; ✓ Flexible timings &nbsp; ✓ Supportive teaching</div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-card">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1100&q=85" alt="Students learning together in a bright classroom">
+          </div>
+          <div class="floating float-one">📚 Grades 1–10<small>Learning at every stage</small></div>
+          <div class="floating float-two">🌍 Learn from anywhere<small>Online education</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>Grade 1–10</strong><span>School-level learning</span></div>
+        <div class="stat"><strong>Online Classes</strong><span>Learn from anywhere</span></div>
+        <div class="stat"><strong>Student Focused</strong><span>Supportive learning approach</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85" alt="A student studying at a desk">
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">About MindBloom</span>
+          <h2>Helping every learner grow with confidence.</h2>
+          <p>MindBloom Online Academy is an online learning initiative designed to make quality education more accessible. We support school students from Grade 1 to Grade 10 with clear explanations, focused guidance and a positive learning environment.</p>
+          <p>Our aim is to help students understand concepts, strengthen their skills and become confident independent learners—wherever they are.</p>
+          <ul class="check-list">
+            <li><span class="check">✓</span> Online learning for students in Pakistan and worldwide</li>
+            <li><span class="check">✓</span> Lessons planned around students' learning needs</li>
+            <li><span class="check">✓</span> A focus on understanding, practice and progress</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Our learning areas</span>
+          <h2>Subjects that build strong foundations</h2>
+          <p>Explore key school subjects with guidance designed to make learning clear, engaging and meaningful.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card"><div class="course-icon">➗</div><h3>Mathematics</h3><p>Build problem-solving skills and confidence with numbers, formulas and concepts.</p></article>
+          <article class="course-card"><div class="course-icon">📖</div><h3>English</h3><p>Develop reading, writing, grammar and communication skills.</p></article>
+          <article class="course-card"><div class="course-icon">🧬</div><h3>Biology</h3><p>Understand living organisms, life processes and the world around us.</p></article>
+          <article class="course-card"><div class="course-icon">⚗️</div><h3>Chemistry</h3><p>Explore matter, reactions and essential scientific principles.</p></article>
+          <article class="course-card"><div class="course-icon">⚡</div><h3>Physics</h3><p>Learn about energy, forces, motion and how the physical world works.</p></article>
+          <article class="course-card"><div class="course-icon">🔬</div><h3>General Science</h3><p>Discover scientific ideas through explanations, examples and practice.</p></article>
+          <article class="course-card"><div class="course-icon">💻</div><h3>Computer</h3><p>Build digital knowledge and understand essential computer concepts.</p></article>
+        </div>
+        <div class="grades" aria-label="Available grade levels">
+          <span class="grade-pill">Grade 1</span><span class="grade-pill">Grade 2</span><span class="grade-pill">Grade 3</span><span class="grade-pill">Grade 4</span><span class="grade-pill">Grade 5</span><span class="grade-pill">Grade 6</span><span class="grade-pill">Grade 7</span><span class="grade-pill">Grade 8</span><span class="grade-pill">Grade 9</span><span class="grade-pill">Grade 10</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The MindBloom difference</span>
+          <h2>Why choose MindBloom?</h2>
+          <p>A supportive online learning experience with attention to each student's progress.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card"><div class="course-icon">👩‍🏫</div><h3>Experienced Teaching</h3><p>Learn with guidance from an experienced teacher who makes lessons easier to understand.</p></article>
+          <article class="why-card"><div class="course-icon">🎯</div><h3>Quality-Based Education</h3><p>Focus on clear concepts, meaningful practice and steady academic improvement.</p></article>
+          <article class="why-card"><div class="course-icon">🕒</div><h3>Flexible Timings</h3><p>Online learning makes it easier to arrange lessons around students' schedules.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trial" id="trial">
+      <div class="container trial-wrap">
+        <div>
+          <span class="eyebrow">Start your learning journey</span>
+          <h2>Try a class and discover a better way to learn.</h2>
+          <p>Interested in joining MindBloom Online Academy? Get in touch to ask about a free trial class, available subjects and suitable timings.</p>
+        </div>
+        <a class="btn" href="#contact">Ask About a Free Trial <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">We're here to help</span>
+          <h2>Let's talk about your learning goals.</h2>
+          <p>Contact MindBloom Online Academy for class information, subjects and trial-class enquiries.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item"><div class="course-icon">💬</div><div><strong>WhatsApp</strong><span>Add your academy WhatsApp number to activate this contact link.</span></div></div>
+            <div class="contact-item"><div class="course-icon">📸</div><div><strong>Instagram</strong><a href="https://www.instagram.com/mindbloomonlineacademy/" target="_blank" rel="noopener">@mindbloomonlineacademy</a></div></div>
+            <div class="contact-item"><div class="course-icon">✉️</div><div><strong>Email</strong><span>Add your preferred academy email address.</span></div></div>
+          </div>
+          <div class="contact-panel">
+            <h3>Ready to get started?</h3>
+            <p>Send us a message on Instagram and tell us the student's grade and the subject you are interested in.</p>
+            <a class="btn" href="https://www.instagram.com/mindbloomonlineacademy/" target="_blank" rel="noopener">Visit Our Instagram ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div><strong>MindBloom Online Academy</strong><br><small>Learn Better. Grow Smarter. Succeed Anywhere.</small></div>
+      <div class="footer-links"><a href="#home">Home</a><a href="#courses">Courses</a><a href="#contact">Contact</a></div>
+      <small>© <span id="year"></span> MindBloom Online Academy. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
